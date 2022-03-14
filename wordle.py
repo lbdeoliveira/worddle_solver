@@ -14,10 +14,11 @@ def get_vocab(dictionary_file="/usr/share/dict/words"):
     return words
 
 
-def remove_words(vocab, input_word, output):
+def remove_words(vocab, valid_letters, input_word, output):
     '''
     Inputs:
         * vocab - set of all allowable words
+        * valid_letters - set of all valid letters for word
         * input_word - word sent to worddle (str)
         * output - list of numbers indicating matches
             (0 = no match, 1 = wrong position, 2 = right position)
@@ -31,17 +32,19 @@ def remove_words(vocab, input_word, output):
         letter, match = input_word[i], output[i]
         # Remove words containing invalid letter
         if match == 0:
-            [remove_words.add(word) for word in vocab if letter in word]
+            if letter in valid_letters:
+                [remove_words.add(word) for word in vocab if letter == word[i]]
+            else:
+                [remove_words.add(word) for word in vocab if letter in word]    
         # Remove words with valid letter in wrong position
         # and remove words without valid letter
         elif match == 1:
-            [remove_words.add(word) for word in vocab if letter == word[i]]
-            [remove_words.add(word) for word in vocab if letter not in word]
+            [remove_words.add(word) for word in vocab if letter == word[i] or not letter in word]
+            valid_letters.add(letter)
         # Remove words without valid letter in right position
         else:
             [remove_words.add(word) for word in vocab if letter != word[i]]
+            valid_letters.add(letter)
     for word in remove_words:
         vocab.remove(word)
-        
-        
-
+    return valid_letters
