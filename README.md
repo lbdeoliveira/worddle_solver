@@ -1,2 +1,2 @@
-# worddle_solver
+# wordle_solver
 Interactive shell script to solve worddle game
