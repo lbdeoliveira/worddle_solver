@@ -12,7 +12,7 @@ As it stands, this is a command-line program that requires the user to input the
 
 ## Algorithm
 
-The algorithm for solving wordle is pretty straightforward. We start out by loading in all valid words from our local computer's built-in dictionary file. For Mac users, these words are usually found in $\texttt{"/usr/share/dict/words"}$.
+The algorithm for solving wordle is pretty straightforward. We start out by loading in all valid words from our local computer's built-in dictionary file. For Mac users, these words are usually found in `"/usr/share/dict/words"`.
 
 The program runs as follows:
 
@@ -43,15 +43,15 @@ Luckily, instead of clicking or sending keys to a specific element, we can use S
 
 Now that we know how the algorithm and bot work, let talk about how we actually get the bot to solve Wordle.
 
-We initialize the program by typing *python bot.py* in the terminal. This will launch a Chrome browser that will nagivate to the Wordle website, close the intro guide, and send the first guess.
+We initialize the program by typing `python bot.py` in the terminal. This will launch a Chrome browser that will nagivate to the Wordle website, close the intro guide, and send the first guess.
 
-Your job at this juncture is to provide feedback to the program in the as follows. If the bot guesses an invalid word (this happens often) type *na* in the terminal.
+Your job at this juncture is to provide feedback to the program in the as follows. If the bot guesses an invalid word (this happens often) type `na` in the terminal.
+
+**Example of an invalid guess:**
 
 <p align="center">
 <img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/na.png" width="800">
 </p>
-
-**Comments here**
 
 For valid words, we will type a list of comma-separated numbers to denote the different colors:
 
@@ -62,7 +62,9 @@ For valid words, we will type a list of comma-separated numbers to denote the di
 <img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/ex1.png" width="800">
 </p>
 
-**Comments here**
+For the guess above we would type `0,2,1,1,0`. For the guess below, we would type `0,2,0,2,2`.
 
 <img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/ex2.png" width="800">
 </p>
+
+Almost always the program will land on a solution around the 4th guess. Simply respond with `2,2,2,2,2` and the program will know to terminate. If the program does not land on a solution after six guesses, type `done` and the program will also terminate.
