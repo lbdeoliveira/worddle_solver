@@ -48,7 +48,7 @@ We initialize the program by typing *python bot.py* in the terminal. This will l
 Your job at this juncture is to provide feedback to the program in the as follows. If the bot guesses an invalid word (this happens often) type *na* in the terminal.
 
 <p align="center">
-<img src="https://github.com/lbdeoliveira/wordle_solver/static/na.png" width="800">
+<img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/na.png" width="800">
 </p>
 
 **Comments here**
@@ -59,10 +59,10 @@ For valid words, we will type a list of comma-separated numbers to denote the di
 * Yellow: 1
 * Green: 2
 
-<img src="https://github.com/lbdeoliveira/wordle_solver/static/ex1.png" width="800">
+<img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/ex1.png" width="800">
 </p>
 
 **Comments here**
 
-<img src="https://github.com/lbdeoliveira/wordle_solver/static/ex2.png" width="800">
+<img src="https://github.com/lbdeoliveira/wordle_solver/blob/main/static/ex2.png" width="800">
 </p>
