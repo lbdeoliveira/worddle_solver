@@ -31,7 +31,7 @@ I built this bot using Python and Selenium to drive a Chrome web browser. Make s
 One big problem I ran into was wrestling with the shadow roots in the source code of the Wordle webpage. This made finding elements like the close button for the explainer window and the game tiles for sending keys and getting responses much more complicated than I initially anticipated. Unfortunately, it just so happens that pretty much everything that we need to interact with on the Wordle webpage falls under these shadow roots.
 
 <p align="center">
-<img src="https://github.com/lbdeoliveira/wordle_solver/static/source.png" width="800">
+<img src="https://github.com/lbdeoliveira/wordle_solver/blob/master/static/source.png" width="800">
 </p>
 
 Luckily, instead of clicking or sending keys to a specific element, we can use Selenium *Actions* to "generally" click or type. When the page first opens, we simply tell the bot to "click" and this closes the instruction tile. Whenever we want to type in a word, we simply "send keys" as if we were typing on the keyboard without having to identify any webpage element in particular.
